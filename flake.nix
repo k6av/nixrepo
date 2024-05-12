@@ -10,9 +10,9 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
   in {
-    packages.${system} = {
-      
-    };
+    packages.${system} = builtins.mapAttrs
+      (pkg: _: import ./pkgs/${pkg} { inherit system; inherit pkgs; } )
+      (builtins.readDir ./pkgs);
   };
 }
  
