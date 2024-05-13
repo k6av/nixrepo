@@ -1,4 +1,4 @@
-{ pkgs, system }: pkgs.stdenv.mkDerivation rec {
+{ pkgs, system, ... }: pkgs.stdenv.mkDerivation rec {
   inherit system;
 
   name = "luna";

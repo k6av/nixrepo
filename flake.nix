@@ -11,7 +11,7 @@
     pkgs = import nixpkgs { inherit system; };
   in {
     packages.${system} = builtins.mapAttrs
-      (pkg: _: import ./pkgs/${pkg} { inherit system; inherit pkgs; } )
+      (pkg: _: import ./pkgs/${pkg} { inherit system; inherit pkgs; inherit inputs; } )
       (builtins.readDir ./pkgs);
   };
 }

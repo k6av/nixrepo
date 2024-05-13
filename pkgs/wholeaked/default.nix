@@ -1,4 +1,4 @@
-{ pkgs, system }: pkgs.buildGoModule rec {
+{ pkgs, system, ... }: pkgs.buildGoModule rec {
   inherit system;
 
   name = "wholeaked";
